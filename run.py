@@ -37,7 +37,7 @@ if __name__ == "__main__":
 
     opt = parser.parse_args()
     with open(opt.config) as f:
-        config = yaml.load(f)
+        yaml.load(f, Loader=yaml.Loader)
 
     if opt.checkpoint is not None:
         log_dir = os.path.join(*os.path.split(opt.checkpoint)[:-1])
